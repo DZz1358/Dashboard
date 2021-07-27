@@ -1,18 +1,17 @@
 <tbody class="bg-white divide-y divide-gray-200">
-    <tr class="hover:bg-gray-50 cursor-pointer">
+    <tr *ngFor="let user of users" class="hover:bg-gray-50 cursor-pointer">
         <td class="px-6 py-4 whitespace-nowrap">
             <div class="flex items-center">
                 <div class="flex-shrink-0 h-10 w-10">
-                    <img class="h-10 w-10 rounded-full"
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
-                        alt="" />
+                    <img class="h-10 w-10 rounded-full" 
+                    src="{{user.image}}"/>
                 </div>
                 <div class="ml-4">
                     <div class="text-sm font-medium text-gray-900">
-                        Jane Cooper
+                        {{ user.name }}
                     </div>
                     <div class="text-sm text-gray-500">
-                        jane.cooper@example.com
+                        {{user.email }}
                     </div>
                 </div>
             </div>
@@ -21,21 +20,10 @@
             <div class="text-sm text-gray-900">
                 Regional Paradigm Technician
             </div>
-            <div class="text-sm text-gray-500">Optimization</div>
+            <div class="text-sm text-gray-500">{{user.department }}</div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap">
-            <span class="
-    px-2
-    inline-flex
-    text-xs
-    leading-5
-    font-semibold
-    rounded-full
-    bg-green-100
-    text-green-800
-    ">
-                Active
-            </span>
+            <app-status></app-status>
         </td>
         <td class="
     px-6
@@ -43,7 +31,7 @@
     whitespace-nowrap
     text-sm text-gray-500
     ">
-            Admin
+            {{ user.role }}
         </td>
         <td class="
     px-6
@@ -52,7 +40,7 @@
     text-right text-sm
     font-medium
     ">
-            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+            <a href="#" class="text-indigo-600 hover:text-indigo-900 ">Edit</a>
         </td>
     </tr>
 </tbody>
