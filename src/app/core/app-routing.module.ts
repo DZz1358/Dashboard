@@ -8,7 +8,14 @@ const routes: Routes = [
       import('../pages/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
-  }
+  },
+  {
+    path: 'member',
+    loadChildren: () =>
+      import('../pages/member-action/member-action.module').then(
+        (m) => m.MemberActionModule
+      ),
+  },
 ];
 
 @NgModule({

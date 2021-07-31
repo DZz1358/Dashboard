@@ -1,6 +1,6 @@
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 import { NavigationWrapperComponent } from './navigation/navigation-wrapper/navigation-wrapper.component';
@@ -17,6 +17,7 @@ import { TableTrComponent } from './table/table-tr/table-tr.component';
 import { TableTdComponent } from './table/table-td/table-td.component';
 import { BtnComponent } from './btn/btn.component';
 import { TableFooterComponent } from './table/table-footer/table-footer.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TableFooterComponent } from './table/table-footer/table-footer.componen
     TableTrComponent,
     TableTdComponent,
     BtnComponent,
-    TableFooterComponent
+    TableFooterComponent,
+    InputComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -54,7 +56,7 @@ import { TableFooterComponent } from './table/table-footer/table-footer.componen
     TableTrComponent,
     TableTdComponent,
     BtnComponent,
-    TableFooterComponent
-  ]
+    TableFooterComponent,
+  ],
 })
 export class ComponentsModule {}

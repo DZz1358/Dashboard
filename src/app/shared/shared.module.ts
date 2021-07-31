@@ -1,15 +1,35 @@
-import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
 import { ServicesModule } from './services/services.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, ComponentsModule, ServicesModule, DirectivesModule],
-  exports: [CommonModule, ComponentsModule, ServicesModule, DirectivesModule],
+  imports: [
+    CommonModule,
+    ComponentsModule,
+    ServicesModule,
+    DirectivesModule,
+    NgbPaginationModule,
+    ReactiveFormsModule,
+    NgbModule,
+  ],
+  exports: [
+    CommonModule,
+    ComponentsModule,
+    ServicesModule,
+    DirectivesModule,
+    NgbPaginationModule,
+    ReactiveFormsModule,
+    NgbModule,
+  ],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {
