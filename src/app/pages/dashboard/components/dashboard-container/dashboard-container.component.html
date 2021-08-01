@@ -7,21 +7,14 @@
     <app-table>
       <app-table-header [titles]="tableHeaders"></app-table-header>
       <app-table-body>
-        <tr
-          *ngFor="let item of peoples "
-          class="hover:bg-gray-50 cursor-pointer"
-        >
+        <tr *ngFor="let item of memberService.people " class="hover:bg-gray-50 cursor-pointer">
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="flex items-center">
               <div class="flex-shrink-0 h-10 w-10">
-                <img
-                  class="h-10 w-10 rounded-full"
-                  src="{{item.image}}"
-                  alt=""
-                />
+                <img class="h-10 w-10 rounded-full" src="{{item.image}}" alt="" />
               </div>
               <div class="ml-4">
-                <div class="text-sm font-medium text-gray-900">{{item.name}}</div>
+                <div class="text-sm font-medium text-gray-900">{{item.firstName}} {{item.lastName}}</div>
                 <div class="text-sm text-gray-500">{{item.email}}</div>
               </div>
             </div>
@@ -33,8 +26,7 @@
             <div class="text-sm text-gray-500">{{item.department}}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <span
-              class="
+            <span class="
                 px-2
                 inline-flex
                 text-xs
@@ -43,29 +35,22 @@
                 rounded-full
                 bg-green-100
                 text-green-800
-              "
-            >
+              ">
               Active
             </span>
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
             {{item.role}}
           </td>
-          <td
-            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-          >
-            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <a routerLink="member/new"
+            [routerLink]="['/member', item.id]" class="text-indigo-600 hover:text-indigo-900">Edit</a>
           </td>
         </tr>
       </app-table-body>
     </app-table>
 
-    <ngb-pagination
-      
-      [page]="page"
-      [pageSize]="1"
-      [collectionSize]="peoples.length"
-      (pageChange)="pageChange($event)"
-    ></ngb-pagination>
+    <ngb-pagination [page]="page" [pageSize]="1" [collectionSize]="memberService.people.length"
+      (pageChange)="pageChange($event)"></ngb-pagination>
   </div>
 </div>

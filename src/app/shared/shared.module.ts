@@ -6,8 +6,9 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
-import { ServicesModule } from './services/services.module';
+// import { ServicesModule } from './services/services.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MemberService } from './services/member.service';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     ComponentsModule,
-    ServicesModule,
+    // ServicesModule,
     DirectivesModule,
     NgbPaginationModule,
     ReactiveFormsModule,
@@ -24,7 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   exports: [
     CommonModule,
     ComponentsModule,
-    ServicesModule,
+    // ServicesModule,
     DirectivesModule,
     NgbPaginationModule,
     ReactiveFormsModule,
@@ -35,7 +36,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {
     return {
       ngModule: SharedModule,
-      providers: [],
+      providers: [MemberService],
     };
   }
 }
