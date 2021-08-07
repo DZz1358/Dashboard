@@ -1,13 +1,13 @@
 <app-page-header>
   <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
-  <app-btn routerLink="/member/new"> New member </app-btn>
+  <app-btn [queryParams]="{ page: 'dashboard' }" routerLink="/member/new"> New member </app-btn>
 </app-page-header>
 <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
   <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
     <app-table>
       <app-table-header [titles]="tableHeaders"></app-table-header>
       <app-table-body>
-        <tr *ngFor="let item of memberService.people " class="hover:bg-gray-50 cursor-pointer">
+        <tr *ngFor="let item of memberService.people$ | async " class="hover:bg-gray-50 cursor-pointer">
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="flex items-center">
               <div class="flex-shrink-0 h-10 w-10">
@@ -43,7 +43,9 @@
             {{item.role}}
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-            <a routerLink="member/new"
+            <a
+            [queryParams]="{page: 'dashboard'}"
+            routerLink="member/new"
             [routerLink]="['/member', item.id]" class="text-indigo-600 hover:text-indigo-900">Edit</a>
           </td>
         </tr>

@@ -16,6 +16,14 @@ const routes: Routes = [
         (m) => m.MemberActionModule
       ),
   },
+  {
+    path: 'team',
+    loadChildren: () =>
+      import('../pages/team/team.module').then(
+        (m) => m.TeamModule
+      ),
+  },
+
 ];
 
 @NgModule({
