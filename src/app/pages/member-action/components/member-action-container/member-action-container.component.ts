@@ -70,7 +70,6 @@ export class MemberActionContainerComponent implements OnInit {
   }
 
   action(): void {
-    // ;
     if (this.state === State.Edit){
       this.editMember(this.activatedRoute.snapshot.params.id, this.form.value)
     } else {

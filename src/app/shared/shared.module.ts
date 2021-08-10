@@ -9,11 +9,14 @@ import { DirectivesModule } from './directives/directives.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MemberService } from './services/member.service';
 import { TeamService } from './services/team.service';
+import { PostService } from './services/post.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [],
   imports: [
+    HttpClientModule,
     CommonModule,
     ComponentsModule,
     DirectivesModule,
@@ -28,13 +31,14 @@ import { TeamService } from './services/team.service';
     NgbPaginationModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule,
   ],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {
     return {
       ngModule: SharedModule,
-      providers: [MemberService, TeamService],
+      providers: [MemberService, TeamService, PostService],
     };
   }
 }

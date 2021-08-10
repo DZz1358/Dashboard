@@ -23,6 +23,14 @@ const routes: Routes = [
         (m) => m.TeamModule
       ),
   },
+  {
+    path: 'posts',
+    loadChildren: () =>
+      import('../pages/post/post.module').then(
+        (m) => m.PostModule
+      ),
+  },
+
 
 ];
 

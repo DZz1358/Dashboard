@@ -9,7 +9,7 @@ export class TeamService {
 
   people: any[] = [...people];
 
-  constructor() { }
+  constructor() {}
 
   addMember(member: Member ) :void {
     this.people.push({...member, id: this.getId()});
